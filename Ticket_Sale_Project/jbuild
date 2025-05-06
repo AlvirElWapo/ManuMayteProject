@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [ "$1" == "clean" ]; then
+  echo "Cleaning build..."
+  rm -rf build
+  exit 0
+fi
+
+mkdir -p build
+javac -d build $(find src -name "*.java")
+
+if [ $? -eq 0 ]; then
+  echo "Build succeeded."
+  java -cp build Main
+else
+  echo "Build failed."
+fi

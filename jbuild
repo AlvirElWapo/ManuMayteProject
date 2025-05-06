@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+  echo "Usage: ./build.sh <JavaFileName.java>"
+  exit 1
+fi
+
+filename="${1%.java}"
+
+javac "$1"
+if [ $? -ne 0 ]; then
+  echo "Compilation failed."
+  exit 1
+fi
+
+java "$filename"
+
