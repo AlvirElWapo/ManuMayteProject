@@ -4,6 +4,7 @@ import logic.LinkedList;
 import logic.HashMap;
 import ui.SeatSelectionUI;
 import ui.StadiumUI;
+import javax.swing.*;
 
 public class Main {
   public static void main(String[] args) {
@@ -26,7 +27,7 @@ public class Main {
     // scores.remove("Bob");
     // scores.printMap();
 
-    new StadiumUI();
+    SwingUtilities.invokeLater(StadiumUI::new);
 
 
 
